@@ -1,0 +1,87 @@
+@use "../../shared/colors";
+@use "../../shared/fonts";
+@import "../../shared/bounds";
+@import "../../shared//containers";
+
+.footer {
+    background-color: colors.$white;
+    font-family: fonts.$Montserrat;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid colors.$light;
+}
+
+.container {
+    @include container;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    div {
+        @include dFlex(initial, center);
+        span {
+            font-size: 1.6rem;
+        }
+    }
+
+    div.author {
+        margin: 25px auto 25px 0px;
+    }
+
+    ul {
+        @include dFlex(center);
+
+        li {
+            a {
+                font-weight: 500;
+                display: block;
+                padding: 26px 12px;
+                line-height: 26px;
+                font-size: 1.4rem;
+                color: colors.$black;
+                border-bottom: 2px solid transparent;
+                &:hover {
+                    color: colors.$blue;
+                }
+                @media (max-width: 1024px) {
+                    padding: 10px 10px;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    ul.menuListMobile {
+        display: none;
+        padding: 0px 30%;
+        text-align: center;
+        flex-direction: column;
+        li {
+            max-width: 120px;
+            padding: 5px 0px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        ul.menuList {
+            display: none;
+        }
+        ul.menuListMobile {
+            @media (max-width: 1024px) {
+                display: block;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        ul.menuListMobile {
+            padding: 0px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

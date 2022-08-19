@@ -1,0 +1,38 @@
+@use "../shared/colors";
+@use "../shared/fonts";
+
+@mixin buttonBase {
+    font-size: 1.2rem;
+    padding: 1.4rem 4rem;
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@mixin buttonDefault {
+    @include buttonBase;
+    background-color: colors.$white;
+    border: 1px solid colors.$blue;
+    color: colors.$blue;
+    &:hover {
+        background-color: colors.$blue;
+        color: colors.$white;
+    }
+}
+
+@mixin buttonInverse {
+    @include buttonBase;
+    background-color: colors.$blue;
+    border: 1px solid colors.$white;
+    color: colors.$white;
+    &:hover {
+        background-color: colors.$white;
+        color: colors.$blue;
+        border: 1px solid colors.$blue;
+    }
+}

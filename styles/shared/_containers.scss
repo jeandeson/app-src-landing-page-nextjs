@@ -1,0 +1,8 @@
+@mixin dFlex($justify: initial, $align: initial, $invert: false) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    @if $invert == true {
+        flex-direction: column;
+    }
+}

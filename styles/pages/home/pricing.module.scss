@@ -1,0 +1,157 @@
+@use "../../shared/colors";
+@use "../../shared/fonts";
+@import "../../shared/bounds";
+@import "../../shared/containers";
+
+.pricingSection {
+    @include dFlex;
+    padding: 110px 0px;
+}
+
+.container {
+    @include container;
+}
+
+.pricingWrapper {
+    @include dFlex(center, center, true);
+
+    .pricingDetails {
+        text-align: center;
+        h6 {
+            font-family: fonts.$Montserrat;
+            font-size: 1.6rem;
+            color: colors.$gray;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-family: fonts.$Poppins;
+            font-size: 3.6rem;
+            color: colors.$dark;
+            margin-bottom: 25px;
+        }
+        p {
+            font-family: fonts.$Montserrat;
+            font-size: 1.6rem;
+            color: colors.$gray;
+            padding: 0 32px;
+            margin-bottom: 35px;
+            padding: 0 15%;
+            line-height: 26px;
+        }
+    }
+
+    .plans {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        .pricingContainer.centerPrice .pricingHead {
+            border-top: 1px solid colors.$light;
+            h4 {
+                margin-top: 40px;
+            }
+        }
+        .pricingContainer.centerPrice:hover {
+            .pricingHead {
+                border-top: 2px solid rgba($color: colors.$blue, $alpha: 1);
+            }
+        }
+        .pricingContainer.centerPrice .headSpacing {
+            position: absolute;
+            top: 32px;
+            left: 20%;
+            height: 20px;
+            width: 60%;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: colors.$blue;
+            h4 {
+                color: colors.$white;
+                font-size: 2rem;
+            }
+            &::before {
+                content: "";
+                border-width: 18px;
+                border-style: solid;
+                border-color: #0084ff transparent transparent;
+                position: absolute;
+                top: -18px;
+                left: -18px;
+                transform: rotate(-180deg);
+            }
+            &::after {
+                content: "";
+                border-width: 18px;
+                border-style: solid;
+                border-color: #0084ff transparent transparent;
+                position: absolute;
+                top: -18px;
+                right: -18px;
+                transform: rotate(-180deg);
+            }
+        }
+
+        .pricingContainer {
+            position: relative;
+            flex: 1;
+            margin: 0 20px;
+            padding-top: 50px;
+            text-align: center;
+            transition: all 0.3s;
+            &:hover {
+                transform: translateY(-20px);
+                ul {
+                    border-left: 2px solid rgba($color: colors.$blue, $alpha: 1);
+                    border-right: 2px solid rgba($color: colors.$blue, $alpha: 1);
+                    border-bottom: 2px solid rgba($color: colors.$blue, $alpha: 1);
+                }
+                .pricingHead {
+                    border-left: 2px solid rgba($color: colors.$blue, $alpha: 1);
+                    border-right: 2px solid rgba($color: colors.$blue, $alpha: 1);
+                }
+            }
+
+            .pricingHead {
+                padding: 30px 0px;
+                border: 1px solid colors.$light;
+                border-top: 4px solid colors.$blue;
+
+                h4 {
+                    color: colors.$blue;
+                    font-family: fonts.$Poppins;
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                }
+                p h4 {
+                    font-weight: 700;
+                }
+                p,
+                sub {
+                    color: colors.$blue;
+                    font-family: fonts.$Poppins;
+                    font-size: 3.6rem;
+                }
+                sub {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .headSpacing {
+                padding: 20px 0px;
+            }
+
+            ul {
+                border: 1px solid colors.$light;
+
+                li {
+                    border-bottom: 1px solid colors.$light;
+                    color: colors.$gray;
+                    font-size: 1.6rem;
+                    line-height: 6.9rem;
+                }
+            }
+            @media (max-width: 1024px) {
+                min-width: 300px;
+            }
+        }
+    }
+}

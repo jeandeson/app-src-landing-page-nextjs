@@ -1,0 +1,17 @@
+@mixin container {
+    width: 100%;
+    max-width: 72vw;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        max-width: 90vw;
+    }
+}
+
+@mixin section($padding: true) {
+    width: 100vw;
+    if padding {
+        padding: 8rem 0;
+    }
+}

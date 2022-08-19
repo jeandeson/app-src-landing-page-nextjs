@@ -1,0 +1,200 @@
+@use "../../shared/colors";
+@use "../../shared/fonts";
+@import "../../shared/bounds";
+@import "../../shared/containers";
+
+.featuresSection {
+    @include dFlex(center);
+    margin-bottom: 110px;
+    padding-bottom: 110px;
+}
+
+.container {
+    @include container;
+}
+
+.line {
+    position: absolute;
+    border: 1px solid colors.$light;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+.featuresWrapper {
+    @include dFlex(center, center, true);
+    @media (max-width: 1024px) {
+        max-width: 540px;
+    }
+    padding: 6rem 0px;
+    margin: 0 auto;
+    text-align: center;
+    p {
+        color: colors.$gray;
+        font-family: fonts.$Montserrat;
+        font-size: 1.6rem;
+        margin-bottom: 2.2rem;
+        padding: 0 15%;
+        line-height: 26px;
+    }
+    h1 {
+        font-weight: 500;
+        margin-bottom: 2.8rem;
+        color: colors.$dark;
+        font-family: fonts.$Poppins;
+        font-size: 3.6rem;
+    }
+    p:last-of-type {
+        margin-bottom: 2.8rem;
+    }
+}
+.featuresDetails {
+    @include dFlex;
+    max-width: 100%;
+    div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        div {
+            position: relative;
+            flex: 1;
+        }
+    }
+    .singleFeatureItemCenter {
+        position: relative;
+        min-width: 580px;
+        min-height: 520px;
+        @media (max-width: 1024px) {
+            min-width: 300px;
+        }
+        .imageWrapper {
+            position: absolute;
+            min-width: 50%;
+            left: 25%;
+            z-index: 99;
+
+            @media (max-width: 1024px) {
+                position: initial;
+                display: flex;
+                justify-content: center;
+                max-width: 75%;
+                min-width: 50%;
+                margin: 0 auto;
+            }
+        }
+        .lineOne {
+            @extend .line;
+            left: -10%;
+            top: -10%;
+            width: 120%;
+            height: 120%;
+            .dots {
+                position: relative;
+
+                :first-child {
+                    position: absolute;
+                    left: 75px;
+                    top: 100px;
+                    background-color: colors.$blue;
+                    border-radius: 50%;
+                    padding: 10px;
+                }
+
+                div:nth-child(2) {
+                    position: absolute;
+                    right: 75px;
+                    top: 100px;
+                    background-color: colors.$blue;
+                    padding: 10px;
+                    border-radius: 50%;
+                }
+
+                div:nth-child(3) {
+                    position: absolute;
+                    right: 75px;
+                    bottom: 100px;
+                    background-color: colors.$blue;
+                    padding: 10px;
+                    border-radius: 50%;
+                }
+
+                :last-child {
+                    position: absolute;
+                    left: 75px;
+                    bottom: 100px;
+                    background-color: colors.$blue;
+                    padding: 10px;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .lineTwo {
+            @extend .line;
+            left: 10%;
+            top: 10%;
+            width: 80%;
+            height: 80%;
+            .dots {
+                position: relative;
+
+                :first-child {
+                    position: absolute;
+                    left: -20px;
+                    bottom: 180px;
+                    padding: 10px;
+                    background-color: colors.$blue;
+                    border-radius: 50%;
+                }
+
+                :last-child {
+                    position: absolute;
+                    right: -20px;
+                    bottom: 180px;
+                    padding: 10px;
+                    background-color: colors.$blue;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .lineTree {
+            @extend .line;
+            left: 20%;
+            top: 20%;
+            width: 60%;
+            height: 60%;
+        }
+    }
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+}
+
+.singleFeatureItem {
+    box-shadow: 0 0 12px #f4f4f4;
+    background-color: colors.$white;
+    padding: 20px;
+    font-size: 12px;
+    line-height: 22px;
+    z-index: 999;
+    margin: 20px 0px;
+    min-width: 160px;
+    border-radius: 3px;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    h5 {
+        font-family: fonts.$Poppins;
+        color: colors.$dark;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    p {
+        font-size: 1.2rem;
+        color: colors.$gray;
+    }
+}

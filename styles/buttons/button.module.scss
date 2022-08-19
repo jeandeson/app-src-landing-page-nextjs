@@ -1,0 +1,23 @@
+@import "../shared/buttons";
+
+.btnHeader {
+    @include buttonDefault();
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+.btnHeaderInverse {
+    @include buttonInverse();
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.btnInverse {
+    @include buttonInverse();
+}
+
+.btnDefault {
+    @include buttonDefault();
+}

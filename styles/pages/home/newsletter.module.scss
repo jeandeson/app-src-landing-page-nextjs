@@ -1,0 +1,58 @@
+@use "../../shared/colors";
+@use "../../shared/fonts";
+@import "../../shared/bounds";
+@import "../../shared/containers";
+
+.newsletterSection {
+    @include dFlex;
+    padding-bottom: 110px;
+}
+
+.container {
+    @include container;
+}
+
+.wrapper {
+    @include dFlex(center, center, true);
+    .newsletterText {
+        flex: 1;
+        text-align: center;
+        line-height: 26px;
+
+        h1 {
+            font-size: 3.6rem;
+            font-family: fonts.$Poppins;
+            color: colors.$dark;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+        p {
+            padding: 0 5%;
+            font-size: 1.6rem;
+            font-family: fonts.$Poppins;
+            color: colors.$gray;
+            margin-bottom: 7.5rem;
+        }
+
+        form {
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 5px;
+            border-radius: 30px;
+            width: 60%;
+            margin: 0 auto;
+            box-shadow: 0 0 10px #ebebeb;
+        }
+
+        input {
+            width: 66%;
+            border: none;
+            margin-left: 14px;
+            background: transparent;
+            height: 100%;
+            outline: none;
+            font-size: 1.5rem;
+        }
+    }
+}

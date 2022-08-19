@@ -1,0 +1,71 @@
+@use "../../shared/colors";
+@use "../../shared/fonts";
+@import "../../shared/bounds";
+@import "../../shared/containers";
+
+.heroSection {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    @include container;
+}
+
+.heroWrapper {
+    @include dFlex(initial, center);
+    height: 100%;
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
+
+    div {
+        flex: 1;
+        min-width: 320px;
+        p:first-of-type {
+            font-size: 1.6rem;
+            font-family: fonts.$Montserrat;
+            color: colors.$light-gray;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            line-height: 26px;
+        }
+        h1 {
+            font-family: fonts.$Poppins;
+            color: colors.$dark;
+            font-size: 4.4rem;
+            margin-bottom: 2.5rem;
+            line-height: 55px;
+            font-weight: 500;
+        }
+        p {
+            font-size: 1.6rem;
+            font-family: fonts.$Montserrat;
+            color: colors.$gray;
+            margin-bottom: 1.6rem;
+            font-weight: 400;
+            line-height: 26px;
+        }
+        div {
+            margin-top: 4.2rem;
+            button {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    div.imageHero {
+        @include dFlex(flex-end);
+        img {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+        @media (max-width: 768px) {
+            justify-content: center;
+            img {
+                padding: 0px;
+            }
+        }
+    }
+}

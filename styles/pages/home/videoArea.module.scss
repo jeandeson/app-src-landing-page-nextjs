@@ -1,0 +1,95 @@
+@use "../../shared/colors";
+@use "../../shared/fonts";
+@import "../../shared/bounds";
+@import "../../shared/containers";
+
+.section {
+    @include dFlex(center, center);
+}
+
+.iframeContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    iframe {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+.isScrollLock {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    height: calc(100vh + 10px);
+}
+
+.container {
+    @include container;
+}
+
+.wrapper {
+    @include dFlex;
+    width: 100%;
+    div {
+        flex: 1;
+    }
+    @media (max-width: 1024px) {
+        flex-wrap: wrap;
+
+        div {
+            min-width: 100%;
+            min-height: 300px;
+        }
+    }
+
+    .videoAreaText {
+        padding: 75px 0px;
+
+        p {
+            padding-right: 12rem;
+            color: colors.$gray;
+            font-size: 1.6rem;
+            font-family: fonts.$Montserrat;
+            margin-bottom: 30px;
+            line-height: 25px;
+        }
+        h1 {
+            color: colors.$dark;
+            font-size: 3.6rem;
+            font-weight: 700;
+            font-family: fonts.$Montserrat;
+            margin-bottom: 35px;
+        }
+        @media (max-width: 1024px) {
+            p,
+            h1 {
+                padding-right: 0;
+                text-align: center;
+            }
+        }
+    }
+    .videoAreaImage {
+        position: relative;
+        background-color: rgba($color: #4383d0, $alpha: 0.5);
+        background-image: url("../../../public//assets/video-area-bg.jpg");
+        background-blend-mode: overlay;
+        background-size: cover;
+        background-position: right;
+        a {
+            position: absolute;
+            left: -28px;
+            top: 50%;
+            padding: 30px;
+            border-radius: 50%;
+            background-color: colors.$blue;
+            background-image: url("../../../public//assets/paly_btn.png");
+            background-repeat: no-repeat;
+            background-position: calc(50% + 2px) 50%;
+            @media (max-width: 1024px) {
+                left: calc(50% - 30px);
+            }
+        }
+    }
+}
