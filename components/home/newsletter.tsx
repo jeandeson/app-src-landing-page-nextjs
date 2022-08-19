@@ -4,7 +4,7 @@ import Button from "../shared/button";
 
 const Newsletter = () => {
     return (
-        <section className={`${styles.newsletterSection}`}>
+        <section id="contact" className={`${styles.newsletterSection}`}>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
                     <div className={styles.newsletterText}>

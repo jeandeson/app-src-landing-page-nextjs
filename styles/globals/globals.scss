@@ -9,6 +9,9 @@ html {
     -ms-transition: 0.2s linear;
     -o-transition: 0.2s linear;
 }
+html:focus-within {
+    scroll-behavior: smooth;
+}
 
 @media (max-width: 991px) {
     html {

@@ -7,7 +7,7 @@ import { AiFillStar } from "react-icons/ai";
 
 const Testimonial = () => {
     return (
-        <section className={`${styles.testimonialSection}`}>
+        <section id="testimonials" className={`${styles.testimonialSection}`}>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
                     <div className={styles.testimonialText}>

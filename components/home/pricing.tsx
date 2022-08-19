@@ -3,7 +3,7 @@ import Button from "../shared/button";
 
 const Pricing = () => {
     return (
-        <section className={styles.pricingSection}>
+        <section id="pricing" className={styles.pricingSection}>
             <div className={styles.container}>
                 <div className={styles.pricingWrapper}>
                     <div className={styles.pricingDetails}>

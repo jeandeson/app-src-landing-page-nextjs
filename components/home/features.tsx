@@ -2,7 +2,7 @@ import styles from "../../styles/pages/home/features.module.scss";
 import Image from "next/image";
 const Features = () => {
     return (
-        <section className={styles.featuresSection}>
+        <section id="features" className={styles.featuresSection}>
             <div className={styles.container}>
                 <div className={styles.featuresWrapper}>
                     <p>WHAT WE DO</p>

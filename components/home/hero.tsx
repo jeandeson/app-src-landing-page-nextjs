@@ -4,7 +4,7 @@ import Button from "../shared/button";
 
 const Hero = () => {
     return (
-        <div className={styles.heroSection}>
+        <div id="hero" className={styles.heroSection}>
             <div className={styles.container}>
                 <div className={styles.heroWrapper}>
                     <div>

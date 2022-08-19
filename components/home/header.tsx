@@ -8,19 +8,19 @@ const getMenuList = (isMobile: boolean) => {
     return (
         <ul className={isMobile ? styles.menuListMobile : styles.menuList}>
             <li>
-                <a href="#">Home</a>
+                <a href="#home">Home</a>
             </li>
             <li>
-                <a href="#">Features</a>
+                <a href="#features">Features</a>
             </li>
             <li>
-                <a href="">Price Plan</a>
+                <a href="#pricing">Price Plan</a>
             </li>
             <li>
-                <a href="">Review</a>
+                <a href="#testimonials">Review</a>
             </li>
             <li>
-                <a href="">Contact</a>
+                <a href="#contact">Contact</a>
             </li>
             <li>
                 <Button type="btnHeaderInverse">Get Now</Button>
